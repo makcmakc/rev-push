@@ -1,0 +1,35 @@
+@charset 'utf-8';
+
+$assets: '../..';
+
+// Theme settings (colors, etc.)
+//----------------------------------------------------------------
+
+
+
+// Common for all themes
+//----------------------------------------------------------------
+
+// Mixins and vars
+@import "colors";
+@import "variables";
+@import "icons";
+@import "mixins/index";
+
+// Typography
+@import "typography/index";
+
+// Helper CSS classes
+@import "helpers/index";
+
+// Partials
+//----------------------------------------------------------------
+@import "partials/index";
+
+// Pages
+//----------------------------------------------------------------
+@import "pages/index";
+
+// Vendor styles
+//----------------------------------------------------------------
+@import "vendor/index";

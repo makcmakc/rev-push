@@ -1,0 +1,34 @@
+@mixin layout($columns: 3, $gutter-vertical: 25px, $gutter-horizontal: 25px) {
+  display: flex;
+  flex-wrap: wrap;  
+  @include negative-margins($gutter-horizontal);
+  @include clear;
+
+  > * {
+    float: left;
+    @if $gutter-horizontal == 0 or $gutter-horizontal == 0px  {
+      width: calc(100% / $columns);
+    }
+    @else {
+      width: calc(#{100% / $columns} - #{$gutter-horizontal});
+      margin: 0 $gutter-horizontal/2 $gutter-vertical $gutter-horizontal/2;
+    }
+  
+    // reset styles on next call to media queries
+    &:nth-last-child(n+#{$columns}) {
+      margin: 0 calc(#{$gutter-horizontal}/2) $gutter-vertical calc(#{$gutter-horizontal}/2);    
+    }  
+   
+    // remove margins of last elements in group
+    &:nth-last-child(-n+#{$columns}) {
+      margin: 0 calc(#{$gutter-horizontal}/2) 0 calc(#{$gutter-horizontal}/2);    
+    }
+  }
+}
+
+// Layout Mixin using css calc function
+//---------------------------------------------------------
+//  Usage:
+// .parent{
+//    @include layout(3, 25px, 25px);
+// }

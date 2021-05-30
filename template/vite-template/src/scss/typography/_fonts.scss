@@ -1,0 +1,108 @@
+$font-dir: "#{$assets}/fonts";
+
+
+// Custom icon font
+// @font-face {
+//   font-family: 'icomoon';
+//   src:  url('./fonts/icomoon.eot?ldpotk');
+//   src:  url('./fonts/icomoon.eot?ldpotk#iefix') format('embedded-opentype'),
+//     url('./fonts/icomoon.ttf?ldpotk') format('truetype'),
+//     url('./fonts/icomoon.woff?ldpotk') format('woff'),
+//     url('./fonts/icomoon.svg?ldpotk#icomoon') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: block;
+// }
+
+
+// Inter 400, 600, 800
+//-------------------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+
+@mixin font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+
+// Weights
+//-------------------------------------------------------
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 800;
+
+//  Sizes
+//-------------------------------------------------------
+$font-sizes: (
+  -5: 10px,
+  -4: 12px,
+  -3: 13px,
+  -2: 14px,
+  -1: 15px,
+  0: 16px,
+  1: 18px,
+  2: 22px,
+  3: 26px,
+  4: 32px,
+  5: 42px,
+  6: 52px,
+  7: 62px
+);
+
+@function font-size($index) {
+  @return map-get($font-sizes, $index);
+}
+
+@mixin font-tiny {
+  font-size: font-size(-5);
+}
+
+@mixin font-xxxs {
+  font-size: font-size(-4);
+}
+
+@mixin font-xxs {
+  font-size: font-size(-3);
+}
+
+@mixin font-xs {
+  font-size: font-size(-2);
+}
+
+@mixin font-sm {
+  font-size: font-size(-1);
+}
+
+@mixin font-med {
+  font-size: font-size(0);
+}
+
+@mixin font-larger {
+  font-size: font-size(1);
+}
+
+@mixin font-lg {
+  font-size: font-size(2);
+}
+
+@mixin font-xlg {
+  font-size: font-size(3);
+}
+
+@mixin font-xxlg {
+  font-size: font-size(4);
+}
+
+@mixin font-xxxlg {
+  font-size: font-size(5);
+}
+
+@mixin font-extra {
+  font-size: font-size(6);
+}
+
+@mixin font-super {
+  font-size: font-size(7);
+}

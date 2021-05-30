@@ -1,0 +1,11 @@
+@mixin list-item($color: primary(0), $size: 1em, $padding: 13px, $fz: inherit) {
+  &::before {
+    content: "\2022";
+    display: inline-block;
+    color: $color;
+    font-weight: $fw-bold;
+    width: $size;
+    padding-right: $padding;
+    font-size: $fz;
+  }
+}

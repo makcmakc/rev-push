@@ -1,0 +1,11 @@
+@mixin truncate-lines($line-height:1.2em, $lines-number:3){
+  line-height: $line-height;
+  max-height: $line-height * $lines-number;
+  overflow: hidden;
+
+  // webkit-only hack
+  display: -webkit-box;
+  -webkit-line-clamp: $lines-number;
+  -webkit-box-orient: vertical;
+}
+

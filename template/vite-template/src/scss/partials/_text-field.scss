@@ -1,0 +1,305 @@
+// General styles
+$tf-border-radius: 10px;
+$tf-border: 1px solid secondary(3);
+$tf-width: 100%;
+$tf-height: 3.125rem;
+
+
+$input-font-size: 14px;
+
+
+// Text Field Default
+$label-padding-top: .75rem;
+$label-padding-right: 15px;
+$label-padding-bottom: .75rem;
+$label-padding-left: 50px;
+
+$label-padding: $label-padding-top $label-padding-right $label-padding-bottom $label-padding-left;
+
+
+
+
+$input-font-size-bg: 18px;
+
+
+
+$label-float: 20px;
+$size-cof: 20px;
+
+// Text Field (tf) small
+
+// Text Field Meddium
+
+// Text Field Big
+
+// Text Filed Plain
+$tf-plain: .85rem;
+
+
+// Text Field Floating
+
+
+
+// /* Text Field Generall Styles 
+// -------------------------------------------------- */
+.text-field {
+  border-radius: $tf-border-radius;
+  color: secondary(0);
+  border: $tf-border;
+	position: relative;
+  @include media(sm2) {
+    width: 100%;
+  }
+
+  &:hover input {
+    background-color: secondary(5);
+  }
+
+  &__input {
+    height: $tf-height;
+    width: $tf-width;
+    padding: $label-padding-top $label-padding-right $label-padding-bottom $label-padding-left;
+    border-radius: $tf-border-radius;
+    border: 1px solid transparent;
+    font-size: $input-font-size;
+
+    &:not(:placeholder-shown) {
+      padding-right: 3rem;
+    }
+
+    &::placeholder {
+      color: inherit;
+      font-size: $input-font-size;
+    }
+
+    &:focus {
+      background-color: secondary(5);
+      transition: background-color 200ms ease-in-out;
+    }
+  }
+
+  &__label {
+    height: $tf-height;
+    padding: $label-padding;   
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 2;
+    color: secondary(2);
+    pointer-events: none;
+    cursor: text;
+    transition: all 0.1s ease-in-out;    
+    font-size: $input-font-size;
+  }
+
+  &__submit,
+  &__clear {
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    background: none;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 5px;
+    @include vertical-center;
+    @include flex-center;
+    &:hover {
+      background: secondary(5);
+    }
+  }
+
+  &__clear {
+    right: 0;
+    display: none;
+  }
+
+  &__msg {
+    padding-left: 10px;
+    color: secondary(2);
+    position: absolute;
+    margin-top: 5px;
+    display: block;
+    min-height: 18px; 
+    font-size: 12px;
+  }
+}
+
+
+// /* Text Field Plain
+// -------------------------------------------------- */
+.text-field--plain {
+  .text-field {
+    &__input {
+      padding: $tf-plain $label-padding-left $tf-plain $tf-plain;
+    }
+  }
+}
+
+// /* Text Field With Floating Label
+// -------------------------------------------------- */
+.text-field--floating {
+  .text-field {
+    &__input {
+
+      &:not(:placeholder-shown) {
+        padding-top: $label-float;
+        padding-bottom: 0.25rem;
+        padding-right: 3rem;
+        background: transparent !important;
+      }
+
+      &:not(:-ms-placeolder-shown) {
+        padding-top: 1.25rem;
+        padding-bottom: 0.25rem;
+      }
+
+      &:not(:-ms-placeholder-shown) ~ label {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        color: secondary(2);
+      } 
+        
+      &:not(:placeholder-shown) ~ label,
+      &:-webkit-autofill ~ label {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        color: secondary(2);
+        font-size: 12px;
+      }   
+  
+      &::placeholder {
+        color: transparent;
+        font-size: 14px;
+      }
+
+      &:focus {
+        background-color: secondary(4);
+        transition: background-color 200ms ease-in-out;
+      }
+    }
+  }
+}
+
+
+// /* Text Field With Floating Label Big Size
+// -------------------------------------------------- */
+.text-field--floating.text-field--bg {
+  .text-field {
+    &__input {
+      &:not(:placeholder-shown) {
+        padding-top: $label-float*2;
+        padding-bottom: $label-float;
+      }
+     
+      &:not(:placeholder-shown) ~ label,
+      &:-webkit-autofill ~ label {
+        padding-top: $label-float/3;
+        font-size: $input-font-size;
+      }      
+    }   
+  }
+}
+
+// /* Text Field Plain Big Size
+// -------------------------------------------------- */
+.text-field--plain.text-field--bg {
+  .text-field {
+    &__input {
+      height: $tf-height*1.4;
+      padding: $label-padding-top $label-padding-right $label-padding-bottom $label-padding-right;
+      font-size: $input-font-size-bg;       
+    }
+  }
+}
+
+// /* Text Field Big Size
+// -------------------------------------------------- */
+.text-field--bg {
+  .text-field {
+    &__input {
+      height: $tf-height*1.4;
+      padding: $label-padding-top $label-padding-right $label-padding-bottom $label-padding-left;
+      font-size: $input-font-size-bg;       
+    }
+
+    &__label {
+      padding: $label-padding-top*1.5 $label-padding-right $label-padding-bottom*1.5 $label-padding-left;
+      font-size: $input-font-size-bg;
+    }
+  }
+}
+
+
+
+// /* Validation
+// -------------------------------------------------- */
+.text-field.invalid {
+  &.text-field {
+    border: 1px solid danger(0);
+  }
+  .text-field {
+    &__msg {
+      color: danger(0) !important;
+    }
+    &__input {
+      color: danger(0) !important;
+    }    
+  }
+}
+
+.text-field.valid {
+  &.text-field {
+    border: 1px solid success(0);
+  }
+  .text-field {
+    &__msg {
+      color: success(0) !important;
+    }
+    &__input {
+      color: success(0) !important;
+    }
+  }
+}
+
+
+// /* Fallback for Edge
+// -------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+	.text-field > label {
+		display: none;
+	}
+
+	.text-field input::-ms-input-placeholder {
+		color: black(2);
+	}
+}
+
+// /* Fallback for IE
+// -------------------------------------------------- */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+	.text-field > label {
+		display: none;
+	}
+
+	.text-field input:-ms-input-placeholder {
+		color: black(2);
+	}
+}
+
+
+
+
+
+.demo {
+  margin-bottom: 50px;
+
+  h6 {
+    margin-bottom: 10px;
+  }
+}
+

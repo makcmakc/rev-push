@@ -1,0 +1,173 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: $color-text;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+
+    // sticky footer
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $color-text;
+}
+
+
+// Headings
+//-----------------------------------------------------
+
+$headings: 'h1', 'h2','h3','h4','h5','h6';
+
+// Base
+#{$headings} {
+  font-weight: $fw-semibold;
+  line-height: 1.25;
+}
+
+h1 {
+  @include font-extra;
+}
+
+h2 {
+  @include font-xxxlg;
+}
+
+h3 {
+  @include font-xxlg;
+}
+
+h4 {
+  @include font-xlg;
+}
+
+h5 {
+  @include font-lg;
+}
+
+h6 {
+  @include font-larger;
+}
+
+
+
+// Paragraph
+//-----------------------------------------------------
+  p, ul, ol, dl, figure, blockquote {
+  margin-bottom: 0.75rem;
+
+  & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
+    margin-top: 1.5rem;
+  }
+}
+
+// Links
+//-----------------------------------------------------
+ a {
+   color: $color-text;
+
+   &:hover {
+     color: primary(0);
+     transition: color $tt;
+   }
+
+   &:visited {
+    color: inherit;
+  }
+ }
+
+
+// Lists
+//-----------------------------------------------------
+
+ul, ol{
+  margin: 0 0 $space 0;
+  padding: 0 0 0 1.1em;
+
+  li{
+    margin-bottom: 0.3em;
+  }
+}
+
+ul.list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+
+    &:before {
+      content: "\2022";
+      display: block;
+      float: left;
+      color: #000;
+      margin-left: -1em;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+  }
+}
+
+ul.unstyled {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin-bottom: 0.5em;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+}
+
+dl {
+  margin: 0 0 $space;
+}
+
+
+dl dt {
+  float: left;
+  margin-right: 0.5em;
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+hr {
+  border:none;
+  height: 1px;
+  background: 0;
+}
+
+blockquote {
+  @include font-med;
+  border-left: 5px solid $color-text;
+  font-style: italic;
+  padding: 0.333em;
+  padding-left: 1em;
+
+  @include media(xs) {
+    @include font-sm;
+    border-left: 3px solid $color-text;
+  }
+}

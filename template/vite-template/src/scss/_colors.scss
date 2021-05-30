@@ -1,0 +1,71 @@
+//  Base Colors
+//-------------------------------------------------------
+$color-text: #262B33;
+$white: #ffffff;
+
+
+$primary: (
+  0: #118DF0,
+  1: #3DA9FF,
+  2: #67BBFF,
+  3: #92CEFF,
+  4: #BCE1FF,
+  5: #E7F4FF
+);
+
+@function primary($index) {
+  @return map-get($primary, $index);
+}
+
+$secondary: (
+  0: #262B33,
+  1: #6B7583,
+  2: #A0AEBD,
+  3: #D3DEEA,
+  4: #E8EFF4,
+  5: #F2F7FC  
+);
+
+@function secondary($index) {
+  @return map-get($secondary, $index);
+}
+
+$success: (
+  0: #1EAD4A,
+  1: #31CF62,
+  2: #49F17D,
+  3: #9DFFBB,
+  4: #C5FFD7,
+  5: #EDFFF2    
+);
+
+@function success($index) {
+  @return map-get($success, $index);
+}
+
+$info: (
+  0: #FFB801,
+  1: #FFCD4D,
+  2: #FFD15C,
+  3: #FFDE8A,
+  4: #FFEBB8,
+  5: #FFF8E5    
+);
+
+@function info($index) {
+  @return map-get($info, $index);
+}
+
+$danger: (
+  0: #E3525B,
+  1: #FF6871,
+  2: #FF8A91,
+  3: #FFACB1,
+  4: #FFCED1,
+  5: #FFF0F1,
+  6: #C5331E
+);
+
+@function danger($index) {
+  @return map-get($danger, $index);
+}

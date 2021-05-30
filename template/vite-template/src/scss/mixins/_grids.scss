@@ -1,0 +1,57 @@
+//defaults
+$grid-columns: 12;
+$grid-gap: $space;
+
+// adds negative margins
+@mixin negative-margins($gap){
+  margin-left: #{-$gap/2};
+  margin-right: #{-$gap/2};
+}
+
+// Flex grid with float fallback
+//---------------------------------------------------------
+// Usage:
+// .parent{
+//   @include flex-grid(20px, 10px);
+// }
+// .child{
+//   width:50%;
+// }
+
+@mixin flex-grid($gap-h:$grid-gap, $gap-v:$gap-h){
+  margin: 0 #{-$gap-h/2};
+  display: flex;
+  flex-wrap:wrap;
+  @include clear;
+
+  > *{
+    float:left; //fallback
+    padding: 0 $gap-h/2 $gap-v $gap-h/2;
+  }
+}
+
+
+// Grid using css calc function
+//---------------------------------------------------------
+//  Usage:
+// .parent{
+//   @include negative-margins(20px);
+//   @include clear;
+//   display: flex; //optional
+//   flex-wrap:wrap; //optional
+// }
+// .child{
+//  @include calc-cell(25%, 20px, 10px);// width of the column, horizontal gap, vertical gap
+// }
+
+@mixin calc-cell($width, $gap-h:0, $gap-v:$gap-h){
+  float: left;
+  @if $gap-h == 0 or $gap-h == 0px  {
+    width: $width;
+  }
+  @else {
+    width: calc(#{$width} - #{$gap-h});
+    margin: 0 $gap-h/2 $gap-v $gap-h/2;
+  }
+}
+

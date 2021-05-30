@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <section class="section" style="padding: 100px">
+      <div class="wrapper">
+
+        <div class="demo">
+          <h6>Plain Text Field</h6>
+          <div class="text-field text-field--plain" style="width: 30%;">
+            <input type="text" class="text-field__input" autocomplete="off" placeholder="Search by subject">
+            <span class="text-field__clear"><i class="icon-close"></i></span>   
+            <span class="text-field__msg">Here will be message</span>
+          </div>   
+        </div>        
+
+        <div class="demo">
+          <h6>Default Text Field</h6>
+          <div class="text-field valid" style="width: 30%;">
+            <button type="submit" class="text-field__submit"><i class="icon-search"></i></button>
+            <input type="text" class="text-field__input" autocomplete="off" placeholder="Search by subject" value="qwerty12345">
+            <span class="text-field__clear"><i class="icon-close"></i></span>      
+            <span class="text-field__msg">Password is valid</span>         
+          </div>   
+        </div>
+
+        <div class="demo">
+          <h6>Floating Label Text Field</h6>
+          <div class="text-field text-field--floating invalid" style="width: 30%;">
+            <button type="submit" class="text-field__submit"><i class="icon-search"></i></button>
+            <input type="text" class="text-field__input" autocomplete="off" placeholder="Search by subject" value="any wrong password">
+            <label class="text-field__label">Search by subject</label>
+            <span class="text-field__clear"><i class="icon-close"></i></span>
+            <span class="text-field__msg">Password must be at least 8 characters</span>         
+          </div>   
+        </div>
+
+        <div class="demo">
+          <h6>Plain Text Field Big Size</h6>
+          <div class="text-field text-field--plain text-field--bg" style="width: 50%;">
+            <input type="text" class="text-field__input" autocomplete="off" placeholder="Search by subject">
+            <span class="text-field__clear"><i class="icon-close"></i></span>   
+            <span class="text-field__msg">Here will be message</span>
+          </div>   
+        </div>            
+        
+        <div class="demo">
+          <h6>Default Text Field Big Size</h6>
+          <div class="text-field text-field--bg" style="width: 50%;">
+            <button type="submit" class="text-field__submit"><i class="icon-search"></i></button>
+            <input type="text" class="text-field__input" autocomplete="off" placeholder="Search by subject">
+            <span class="text-field__clear"><i class="icon-close"></i></span>               
+          </div>   
+        </div>        
+        
+        <div class="demo">
+          <h6>Floating Label Text Field Big Size</h6>
+          <div class="text-field text-field--floating text-field--bg" style="width: 50%;">
+            <button type="submit" class="text-field__submit"><i class="icon-search"></i></button>
+            <input type="text" class="text-field__input" autocomplete="off" placeholder="Search by subject">
+            <label class="text-field__label">Search by subject</label>
+            <span class="text-field__clear"><i class="icon-close"></i></span>               
+          </div>   
+        </div>
+              
+      </div>
+    </section>
+
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

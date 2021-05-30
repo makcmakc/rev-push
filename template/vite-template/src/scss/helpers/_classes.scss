@@ -1,0 +1,36 @@
+.hide-for-mobile {
+  @include media(sm3) {
+    display: none !important;
+  }
+}
+
+.hide-for-desktop {
+  @include media-up(sm3) {
+    display: none !important;
+  }
+}
+
+.body-bg {
+  background-color: secondary(5);
+}
+
+.body-dark {
+  background-color: secondary(0);
+  color: $white;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.colorized {
+  color: primary(0) !important;
+}

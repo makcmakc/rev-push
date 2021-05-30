@@ -1,0 +1,19 @@
+// --------- Main Wrapper (all pages)-------------
+
+.wrapper {
+  max-width: $md-bp;
+  width: 100%;
+  margin: 0 auto;
+
+  @include media($md-bp + (20px * 2)){
+    padding: 0 20px;
+  }
+
+  @include media(sm){
+    padding: 0 20px;
+  }
+
+  @include media(xs){
+    padding: 0 10px;
+  }
+} 
